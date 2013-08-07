@@ -20,6 +20,8 @@ layout: default
 
 
 <div class="row">
+
+
 	<% if  @document.relatedDocuments and @document.relatedDocuments.length: %>
 	<section id="related" class="columns">
 		<h3>Related Posts</h3>

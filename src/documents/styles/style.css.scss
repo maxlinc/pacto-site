@@ -5,6 +5,7 @@
 @import "compass/layout.scss";
 @import "compass/css3/box-shadow";
 @import "compass/css3/transition";
+@import "compass/css3/border-radius";
 
 body {
 	font-family:'Maven Pro', sans-serif;
@@ -56,18 +57,22 @@ $backColDarkGrad: darken($backCol, 15%);
 $colDarken: darken($backCol, 20%);
 
 .container.top-bar {
-	margin-bottom: 0;
+	
 	.top-bar-section{
 		font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 		li a:not(.button):hover, li.active a:not(.button){ 
 			background: #222;
 		}
 	}
+	margin-bottom: 0;
 }
 
 header{
-	background: $backCol;
+	
 	padding: 1.5em 0;
+
+	background: $backCol;
+
 	&.tall{
 		padding: 4.5em 0;
    		@include box-shadow(inset 0 -50px 100px $backColDarkGrad);
@@ -103,14 +108,40 @@ header{
 	margin-bottom: 2em;
 }
 
+// secondary nav on contenttype=pages
+.side-menu .inline-list{
+	
+	padding: 1.5em;
+	padding-left:0;
+	margin-left: 0;
+
+	background: desaturate(lighten($backCol, 45%), 60%);
+	@include border-radius(3px);
+	
+	li:first-child{
+		float:none;
+	}
+
+	@media only screen and (min-width :768px){
+		width: 100%;
+		float: right;
+		li{
+			text-align: right;
+			float:none;
+		}
+	}
+}
 
 #footer {
+
 	color: lighten($backCol, 10%);
 	background: $backColDarkGrad;
+
 	div, li{
 		line-height: 1.5em ;
 	}
-	.right{
+
+	.foot-right{
 		a{
 			color: lighten($backCol, 50%);
 			&:hover{
@@ -118,8 +149,11 @@ header{
 			}
 		}
 		//https://github.com/clearskyabove/docpad/issues/1
-		@media only screen and (max-width :767px){
-			float: none !important;
+		@media only screen and (min-width :768px){
+			float: right;
+			li{
+				float: right
+			}
    		}
 	}
 }

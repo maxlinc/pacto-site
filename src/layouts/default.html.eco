@@ -65,11 +65,11 @@
 	</div>
 	<footer id='footer' class="panel">
 		<div class="row">
-			<div class="columns large-4 small-12">
+			<div class="columns large-5 small-12">
 			&copy; <%= @site.campany %> <%- (new Date()).getFullYear() %>
 			</div>
-			<div class="columns large-8 small-12">
-				<ul class="inline-list right">
+			<div class="columns large-7 small-12 ">
+				<ul class="inline-list foot-right">
 		          	<% for document in @getCollection('pages').toJSON(): %>
 		          	<li class="divider hide-for-small"></li>
 						<li typeof="sioc:Page" about="<%= document.url %>" class="<%= 'active'  if @document.url is document.url %>">
