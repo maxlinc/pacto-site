@@ -21,7 +21,8 @@ docpadConfig = {
 			]
 
 			# The default title of our website
-			title: "Your Website"
+			title: "Clear Sky Above"
+			campany: "Clear Sky Above"
 
 			# The website description (for SEO)
 			description: """
@@ -41,7 +42,7 @@ docpadConfig = {
 
 			# Styles
 			styles: [
-				"/styles/twitter-bootstrap.css"
+				"/styles/zurb-foundation.css"
 				"/styles/style.css"
 			]
 
@@ -84,27 +85,28 @@ docpadConfig = {
 	# These are special collections that our website makes available to us
 
 	collections:
+		pagesInMainMenu: (database) ->
+			database.findAllLive({pageOrder: {$exists: true}, includenInNavs: {$has: 'main'}}, [pageOrder:1,title:1])
+
 		pages: (database) ->
 			database.findAllLive({pageOrder: $exists: true}, [pageOrder:1,title:1])
 
+		# relativeOutDirPath: 'posts'
 		posts: (database) ->
 			database.findAllLive({tags:$has:'post'}, [date:-1])
+
+		faqs: (database) ->
+			database.findAllLive({faqOrder: $exists: true}, [faqOrder:1,title:1])
 
 
 	# =================================
 	# Plugins
 
 	plugins:
-		downloader:
-			downloads: [
-				{
-					name: 'Twitter Bootstrap'
-					path: 'src/files/vendor/twitter-bootstrap'
-					url: 'https://nodeload.github.com/twitter/bootstrap/tar.gz/master'
-					tarExtractClean: true
-				}
-			]
-
+		sass:
+			compass: true
+			sassPath: "/var/lib/gems/1.9.1/gems/sass-3.2.10/bin/sass"
+			scssPath: "/var/lib/gems/1.9.1/gems/sass-3.2.10/bin/scss"
 
 	# =================================
 	# DocPad Events

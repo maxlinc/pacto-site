@@ -3,13 +3,25 @@ layout: default
 ---
 
 <article id="post" class="post">
-	<h1><%= @document.title %></h1>
-	<div class="post-content"><%- @content %></div>
+
+	<header>
+		<div class="row">
+			<div class="twelve columns">
+				<h1><%= @document.title %></h1>
+			</div>
+		</div>
+	</header>
+	<div class="row">
+		<div class="twelve columns post-content">
+			<%- @content %>
+		</div>
+	</div>
 </article>
 
-<footer>
+
+<div class="row">
 	<% if  @document.relatedDocuments and @document.relatedDocuments.length: %>
-	<section id="related">
+	<section id="related" class="twelve columns">
 		<h3>Related Posts</h3>
 		<nav class="linklist">
 			<% for document in @document.relatedDocuments: %>
@@ -20,4 +32,4 @@ layout: default
 		</nav>
 	</section>
 	<% end %>
-</footer>
+</div>

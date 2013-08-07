@@ -32,38 +32,57 @@
 	<!--[if lt IE 9]>
 		<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-
+	
 	<!-- Styles -->
+	<link href='http://fonts.googleapis.com/css?family=Montserrat|Maven+Pro' rel='stylesheet' type='text/css'>
 	<%- @getBlock('styles').add(@site.styles).toHTML() %>
+
 </head>
-<body>
-	<!-- Markup -->
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="brand" href="/">Welcome</a>
-				<ul class="nav">
-					<% for document in @getCollection('pages').toJSON(): %>
+<body class="preload">
+	<div id='layout'>
+	    <nav class="container top-bar" style="">
+	        <ul class=" title-area">
+	          <li class="name">
+	            <h1><a href="/"> <%= @site.title %></a></h1>
+	          </li>
+	          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+	        </ul>  
+	        <section class="top-bar-section">
+	          <ul class="right">
+	          	<% for document in @getCollection('pagesInMainMenu').toJSON(): %>
+	          	<li class="divider hide-for-small"></li>
+					<li typeof="sioc:Page" about="<%= document.url %>" class="<%= 'active'  if @document.url is document.url %>">
+						<a href="<%= document.url %>" property="dc:title"><%= document.navtitle %></a>
+					</li>
+				<% end %>
+	          </ul>
+	        </section>
+	    </nav>
+		<div role="main">
+			<%- @content %>
+		</div>
+	    <div id='layout_footer'></div>
+	</div>
+	<footer id='footer' class="panel">
+		<div class="row">
+			<div class="columns large-4 small-12">
+			&copy; <%= @site.campany %> <%- (new Date()).getFullYear() %>
+			</div>
+			<div class="columns large-8 small-12">
+				<ul class="inline-list right">
+		          	<% for document in @getCollection('pages').toJSON(): %>
+		          	<li class="divider hide-for-small"></li>
 						<li typeof="sioc:Page" about="<%= document.url %>" class="<%= 'active'  if @document.url is document.url %>">
-							<a href="<%= document.url %>" property="dc:title"><%= document.title %></a>
+							<a href="<%= document.url %>" property="dc:title"><%= document.navtitle %></a>
 						</li>
 					<% end %>
-				</ul>
+		        </ul>
 			</div>
 		</div>
-	</div>
-	<div class="container">
-		<section id="content" class="content">
-			<%- @content %>
-		</section>
-		<footer>
-			<p class="pull-left">&copy; Company <%- (new Date()).getFullYear() %></p>
-			<p class="pull-right">
-				This website was last updated at <%= @site.date.toISOString() %>
-			</p>
-		</footer>
-	</div><!-- /container -->
 
+		 
+
+	</footer>
 	<!-- Scripts -->
 	<%- @getBlock('scripts').add(@site.scripts).toHTML() %>
 </body>
