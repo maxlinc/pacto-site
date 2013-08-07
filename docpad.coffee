@@ -85,18 +85,22 @@ docpadConfig = {
 	# These are special collections that our website makes available to us
 
 	collections:
-		pagesInMainMenu: (database) ->
-			database.findAllLive({pageOrder: {$exists: true}, includenInNavs: {$has: 'main'}}, [pageOrder:1,title:1])
+		# list of documents which make up main nav. May be any content-type
+		dcoumentsInMainNav: (database) ->
+			database.findAllLive({includenInNavs: {$has: 'main'}}, [pageOrder:1,title:1])
 
+		# All documents with contenttype=pages (i.e: directory reflects contenttype which seemed a logical choice)
+		# ordered by pageOrder (not required) and title
 		pages: (database) ->
-			database.findAllLive({pageOrder: $exists: true}, [pageOrder:1,title:1])
+			database.findAllLive({relativeOutDirPath: 'pages'}, [pageOrder:1,title:1])
 
-		# relativeOutDirPath: 'posts'
+		# All documents with contenttype=posts ordered by date
 		posts: (database) ->
-			database.findAllLive({tags:$has:'post'}, [date:-1])
+			database.findAllLive({relativeOutDirPath: 'posts'}, [date:-1])
 
+		# All documents with contenttype=faqs ordered by faqOrder (not required) and title
 		faqs: (database) ->
-			database.findAllLive({faqOrder: $exists: true}, [faqOrder:1,title:1])
+			database.findAllLive({relativeOutDirPath: 'faq'}, [faqOrder:1,title:1])
 
 
 	# =================================

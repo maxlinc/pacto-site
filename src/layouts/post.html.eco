@@ -6,13 +6,13 @@ layout: default
 
 	<header>
 		<div class="row">
-			<div class="twelve columns">
+			<div class="columns">
 				<h1><%= @document.title %></h1>
 			</div>
 		</div>
 	</header>
 	<div class="row">
-		<div class="twelve columns post-content">
+		<div class="columns post-content">
 			<%- @content %>
 		</div>
 	</div>
@@ -21,7 +21,7 @@ layout: default
 
 <div class="row">
 	<% if  @document.relatedDocuments and @document.relatedDocuments.length: %>
-	<section id="related" class="twelve columns">
+	<section id="related" class="columns">
 		<h3>Related Posts</h3>
 		<nav class="linklist">
 			<% for document in @document.relatedDocuments: %>

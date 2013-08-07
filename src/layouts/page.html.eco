@@ -4,10 +4,9 @@ layout: default
 
 
 <article id="page" class="page">
-	
 	<header>
 		<div class="row">
-			<div class="twelve columns">
+			<div class="columns">
 				<h1><%= @document.title %></h1>
 				<% if  @document.subtitle: %>
 					<h3><%= @document.subtitle %></h3>
@@ -16,7 +15,7 @@ layout: default
 		</div>
 	</header>
 	<div class="row">
-		<div class="twelve columns page-content">
+		<div class="columns page-content">
 			<%- @content %>
 		</div>
 	</div>
