@@ -12,7 +12,9 @@ A clean simple template that contains a logical setup for a website + blog.
     3. [Install Bourbon Gem](http://bourbon.io/)  A simple and lightweight mixin library for Sass
 
 3. This template also uses [Grunt](http://gruntjs.com/) to do some of it's build-tasks, such as minification. So you need to:
+
     1.[Install Grunt](http://gruntjs.com/getting-started)
+    2. The result is that grunt becomes globally available. Have a check by typing `grunt` on the commandline.
 
 4. Clone the project and run the server
 
