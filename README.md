@@ -1,6 +1,6 @@
 # [Zurb Foundation](http://twitter.github.com/bootstrap/) skeleton for [DocPad](https://github.com/bevry/docpad)
 
-A clean simple template that contains a logical setup for a website + blog.
+A clean responsive template that contains a logical setup for a website + blog.
 
 ## Getting Started
 
