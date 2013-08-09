@@ -21,8 +21,8 @@ docpadConfig = {
 			]
 
 			# The default title of our website
-			title: "Clear Sky Above"
-			campany: "Clear Sky Above"
+			title: "Acme"
+			company: "Acme Inc."
 
 			# The website description (for SEO)
 			description: """

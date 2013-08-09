@@ -34,6 +34,10 @@ $colDarken: darken($backCol, 20%);
 	margin-bottom: 0;
 }
 
+h1,h2,h3,h4,h5,h6{
+	@include transition(all 0.2s ease-in-out);
+}
+
 header{
 	
 	padding: 1.5em 0;
@@ -47,9 +51,6 @@ header{
 			padding: 7.5em 0;
 			@include transition(all 0.2s ease-in-out);
    		}
-	}
-	h1, h3{
-		@include transition(all 0.2s ease-in-out);
 	}
 	h1{
 		margin: 0;
@@ -73,14 +74,13 @@ header{
 			text-decoration: underline;
 		}
 	}
-}
-
-header {
 	margin-bottom: 2em;
 }
+
 section{
 	margin-bottom: 1.5em;
 }
+
 article{
 	$marg: 2em;
 	margin: $marg 0;
@@ -88,7 +88,6 @@ article{
 		margin-top: -$marg;
 	}
 }
-
 
 #footer {
 	padding-top: 1em;
