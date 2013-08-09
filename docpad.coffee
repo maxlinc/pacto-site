@@ -48,9 +48,7 @@ docpadConfig = {
 
 			# Scripts
 			scripts: [
-				"//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js",
-				"//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js",
-				"/scripts/script.js"
+				"/scripts/app.js"
 			]
 
 
@@ -139,6 +137,23 @@ docpadConfig = {
 					res.redirect(newUrl+req.url, 301)
 				else
 					next()
+
+		# Write After
+		# Used to minify our assets with grunt
+		writeAfter: (opts,next) ->
+
+			# Prepare
+			safeps = require('safeps')
+			pathUtil = require('path')
+			docpad = @docpad
+			rootPath = docpad.getConfig().rootPath
+
+			command = ["grunt", 'uglify']
+			safeps.spawn(command, {safe:false, output:true}, next)
+
+			# Chain
+			@
+
 }
 
 

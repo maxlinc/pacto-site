@@ -15,23 +15,9 @@ layout: default
 	</header>
 	<div class="row">
 
-		<div class="columns large-9 small-12 page-content">
+		<div class="columns large-12 small-12 page-content">
 			<%- @content %>
 		</div>
-
-		<% if  @document.title != 'Blog': %>
-			<nav role=secondary" class="columns large-3 small-12 side-menu">
-
-				<ul class="inline-list">
-					<li><h3>All Pages</h3></li>
-					<% for document in @getCollection('pages').toJSON(): %>
-						<li>
-							<a href="<%= document.url %>"><%= document.navtitle %></a>
-						</li>
-					<% end %>
-				</ul>
-			</nav>
-		<% end %>
 	</div>
 
 	

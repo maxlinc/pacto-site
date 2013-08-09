@@ -4,7 +4,12 @@
 // This includes all of the foundation global elements that are needed to work with any of the other files.
 //@import "foundation/variables";
 
+
+@import "variables";
+
+
 // Foundation Components
 @import 
 	"../../../node_modules/foundation/scss/normalize",
-	"../../../node_modules/foundation/scss/foundation";
+  "../../../node_modules/foundation/scss/foundation",
+  "../../../src_noprocess/styles/typography.scss"

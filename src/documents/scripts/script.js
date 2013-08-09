@@ -1,9 +1,10 @@
+
+/**
+ * Your code goes here. Optionally, you may want to include it in the grunt minify task.
+ * Note that (following Foundation) $ may be either Zepto (modern browsers) or Jquery ( < IE9)
+ * If you don't want that, change the grunt minify task.
+ */
 $(function(){
-	//together with minimal css this ensures no css transitions fire on pageload.
-	//from: http://css-tricks.com/transitions-only-after-page-load/
-	//timeout exists since javascript might run earlier before first transition would be done
-	setTimeout(function(){
-		$("body").removeClass("preload");
-	}, 200);
-})
+	
+});
 

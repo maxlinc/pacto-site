@@ -4,17 +4,14 @@ layout: default
 
 <article id="page" class="page">
 	
-	<header>
-		<div class="row">
-			<div class="columns">
-				<h1><%= @document.title %></h1>
-				<a href="/pages/faq">&#171; Back to all questions </a>
-			</div>
-		</div>
-	</header>
+
 
 	<div class="row">
 		<div class="columns faqpost-content">
+
+			<h1><%= @document.title %></h1>
+			
+
 			<%- @content %>
 			<p>
 				<a href="/pages/faq">&#171; Back to all questions </a>
