@@ -1,5 +1,5 @@
 {
-  "name":"zurb-foundation.docpad",
+  "name": "zurb-foundation.docpad",
   "version": "0.1.0",
   "description": "Zurb Foundation skeleton for DocPad.",
   "homepage": "https://github.com/Clearskyabove/zurb-foundation.docpad",
@@ -39,7 +39,8 @@
     "docpad-plugin-ghpages": "~2.3.0",
     "safeps": "~2.2.6",
     "grunt": "~0.4.1",
-    "grunt-contrib-uglify": "~0.2.2"
+    "grunt-contrib-uglify": "~0.2.2",
+    "docpad-plugin-highlightjs": "~2.1.7"
   },
   "devDependencies": {
     "docpad-plugin-livereload": "~2.5.1"

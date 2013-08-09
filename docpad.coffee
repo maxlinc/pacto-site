@@ -43,7 +43,8 @@ docpadConfig = {
 			# Styles
 			styles: [
 				"/styles/zurb-foundation.css"
-				"/styles/style.css"
+				"/styles/style.css",
+				"/styles/highlightjs-github.css"
 			]
 
 			# Scripts
