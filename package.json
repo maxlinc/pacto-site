@@ -34,6 +34,7 @@
     "docpad-plugin-partials": "~2.7.2",
     "docpad-plugin-related": "~2.0.5",
     "docpad-plugin-text": "~2.2.4",
+    "docpad-plugin-sass": "~2.6.0",
     "foundation": "~4.2.1-1",
     "docpad-plugin-ghpages": "~2.3.0",
     "safeps": "~2.2.6",
