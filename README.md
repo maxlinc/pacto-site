@@ -1,4 +1,4 @@
-# [Zurb Foundation](http://twitter.github.com/bootstrap/) skeleton for [DocPad](https://github.com/bevry/docpad)
+# [Zurb Foundation](http://foundation.zurb.com/) skeleton for [DocPad](https://github.com/bevry/docpad)
 
 A clean responsive template that contains a logical setup for a website + blog.
 
