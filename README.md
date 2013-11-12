@@ -19,7 +19,7 @@ A clean responsive template that contains a logical setup for a website + blog.
 4. Clone the project and run the server
 
 	``` bash
-	git clone git://github.com/clearskyabove/zurb-foundation.docpad.git
+	git clone git@github.com:Clearskyabove/zurb-foundation.docpad.git
 	cd zurb-foundation.docpad
 	npm install && bourbon install
 	docpad run
