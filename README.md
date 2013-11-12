@@ -16,7 +16,7 @@ A clean responsive template that contains a logical setup for a website + blog.
 	``` bash
 	git clone git@github.com:Clearskyabove/zurb-foundation.docpad.git
 	cd zurb-foundation.docpad
-	npm install
+	docpad update
 	docpad run
 	```
 
