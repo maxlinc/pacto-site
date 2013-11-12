@@ -108,10 +108,6 @@ docpadConfig = {
 	plugins:
 		nodesass: 
 			bourbon: true
-		# sass:
-		# 	compass: true
-		# 	sassPath: "/var/lib/gems/1.9.1/gems/sass-3.2.10/bin/sass"
-		# 	scssPath: "/var/lib/gems/1.9.1/gems/sass-3.2.10/bin/scss"
 
 	# =================================
 	# DocPad Events
