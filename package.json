@@ -26,7 +26,7 @@
     "npm": "1.2"
   },
   "dependencies": {
-    "docpad": "~6.54.5",
+    "docpad": "~6.54.6",
     "docpad-plugin-cleanurls": "~2.5.1",
     "docpad-plugin-coffeescript": "~2.2.3",
     "docpad-plugin-eco": "~2.0.2",
@@ -41,7 +41,9 @@
     "grunt": "~0.4.1",
     "grunt-contrib-uglify": "~0.2.2",
     "docpad-plugin-highlightjs": "~2.1.8",
-    "docpad-plugin-nodesass": "~2.1.1"
+    "docpad-plugin-nodesass": "~2.1.1",
+    "docpad-plugin-grunt": "~2.0.3",
+    "grunt-cli": "~0.1.11"
   },
   "devDependencies": {
     "docpad-plugin-livereload": "~2.5.3"

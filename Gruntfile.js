@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
 
+    //make 2 packages and choose zepto if browser if new enough. This choice is made in default.html.eco
     uglify: {
       dist: {
         "src": [
