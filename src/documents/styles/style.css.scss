@@ -45,7 +45,7 @@ header{
 
 	&.tall{
 		padding: 4.5em 0;
-   		@include box-shadow(inset 0 -50px 100px $backColDarkGrad);
+   		box-shadow: inset 0 -50px 100px $backColDarkGrad;
    		
    		@media #{$small} {
 			padding: 7.5em 0;
