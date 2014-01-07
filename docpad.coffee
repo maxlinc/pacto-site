@@ -44,12 +44,16 @@ docpadConfig = {
 			styles: [
 				"/styles/zurb-foundation.css"
 				"/styles/style.css",
-				"/styles/highlightjs-github.css"
+				"/styles/highlightjs-github.css",
+				"/styles/editor.css",
+				"/styles/animations.css"
 			]
 
 			# Scripts
 			scripts: [
-				"/scripts/app.js"
+				"/scripts/app.js",
+				"/vendor/ace-builds/src-min/ace.js",
+				"/scripts/editor.js"
 			]
 
 

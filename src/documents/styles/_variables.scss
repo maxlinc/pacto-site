@@ -34,24 +34,24 @@ $body-font-style: normal;
 // NOTE: you notice a lot of foundation assets are not included, since they're not needed for the template. 
 // You may include them if you want.
 // 
-$include-html-type-classes: false; //!! SHOULD BE FALSE, WHEN USING '_typography.scss'
-$include-html-button-classes: false;
-$include-html-form-classes:false;
-$include-html-custom-form-classes: false;
-$include-html-media-classes:false;
-$include-html-section-classes:false;
-$include-html-orbit-classes: false;
-$include-html-reveal-classes:false;
-$include-html-joyride-classes:false;
-$include-html-clearing-classes:false;
-$include-html-alert-classes:false;
-$include-html-nav-classes: false;
-$include-html-label-classes:false;
-$include-html-panel-classes: false;
-$include-html-pricing-classes:false;
-$include-html-progress-classes: false;
-$include-html-magellan-classes: false;
-$include-html-tooltip-classes: false;
+$include-html-type-classes: true; //!! SHOULD BE FALSE, WHEN USING '_typography.scss'
+$include-html-button-classes: true;
+$include-html-form-classes:true;
+$include-html-custom-form-classes: true;
+$include-html-media-classes:true;
+$include-html-section-classes:true;
+$include-html-orbit-classes: true;
+$include-html-reveal-classes:true;
+$include-html-joyride-classes:true;
+$include-html-clearing-classes:true;
+$include-html-alert-classes:true;
+$include-html-nav-classes: true;
+$include-html-label-classes:true;
+$include-html-panel-classes: true;
+$include-html-pricing-classes:true;
+$include-html-progress-classes: true;
+$include-html-magellan-classes: true;
+$include-html-tooltip-classes: true;
 
 
 // Media Queries
