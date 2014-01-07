@@ -21,8 +21,8 @@ docpadConfig = {
 			]
 
 			# The default title of our website
-			title: "Acme"
-			company: "Acme Inc."
+			title: "Pacto"
+			company: "ThoughtWorks"
 
 			# The website description (for SEO)
 			description: """
@@ -85,7 +85,7 @@ docpadConfig = {
 
 	collections:
 		# list of documents which make up main nav. May be any content-type
-		dcoumentsInMainNav: (database) ->
+		documentsInMainNav: (database) ->
 			database.findAllLive({includenInNavs: {$has: 'main'}}, [pageOrder:1,title:1])
 
 		# All documents with contenttype=pages (i.e: directory reflects contenttype which seemed a logical choice)
