@@ -2,7 +2,7 @@ language: node_js
 before_script: bower install ace-builds#master
 script:
 - docpad generate --env static
-before_deploy: cd build
+before_deploy: cd out
 deploy:
   provider: cloudfiles
   username: devopsy
