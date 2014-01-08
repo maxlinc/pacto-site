@@ -1,0 +1,18 @@
+language: node_js
+before_script: bower install ace-builds#master
+script:
+- docpad generate --env static
+before_deploy: cd build
+deploy:
+  provider: cloudfiles
+  username:
+    secure: Y0L1G/pdMY+49TeiH9TYw3qJtZZgosW12jv3SLWy/h7SjsBJmUYuzDq9ht5cbxr+Wzw3Ugi2RauTRMO63fyaSharqfKZw5nTfWJjWsgwGJ7MQSGEPC5WsjqTwgCJIupXgIewNY2VDzxL+BF3kf+aZ6imT4DHQcppdcIhOz2Oarc=
+  api-key:
+    secure: VblC/ZJLkjd+i0hqLAZXC3+6MF4kudfXfnTmPhpnkN0t/R/YOTEC4mETm+9o7JUgHU8nHc+m6QTvcIFwSW0mNlu2K6rC86++N3OejbyHbVEa0Buxo+edhr8oBUtPGt4ldD6yjgue6H9oyPGfV3OqRtqC43G+cyb2Z7ADmgDltJY=
+  region: ord
+  container: pacto
+  skip_cleanup: true
+branches:
+  only:
+    - docpad
+
