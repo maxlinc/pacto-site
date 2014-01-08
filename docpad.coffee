@@ -1,6 +1,11 @@
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
 docpadConfig = {
+	environments:
+    static: # change the name here if you have other environments
+      plugins:
+          livereload:
+            enabled: false
 
 	# =================================
 	# Template Data
@@ -52,7 +57,7 @@ docpadConfig = {
 			# Scripts
 			scripts: [
 				"/scripts/app.js",
-				"/vendor/ace-builds/src-min/ace.js",
+				# "/vendor/ace-builds/src-min/ace.js",
 				"/scripts/editor.js"
 			]
 

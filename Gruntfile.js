@@ -5,15 +5,6 @@ module.exports = function(grunt) {
 
     //make 2 packages and choose zepto if browser if new enough. This choice is made in default.html.eco
     uglify: {
-      dist: {
-        "src": [
-          "src/documents/scripts/modernizr.js",
-          "node_modules/foundation/js/vendor/zepto.js",
-          "node_modules/foundation/js/foundation/foundation.js",
-          "node_modules/foundation/js/foundation/foundation.topbar.js"
-        ],
-        "dest": "out/scripts/zepto-pack.min.js"
-      },
       "jquery-pack": {
         "src": [
           "src/documents/scripts/modernizr.js",
@@ -22,6 +13,16 @@ module.exports = function(grunt) {
           "node_modules/foundation/js/foundation/foundation.topbar.js"
         ],
         "dest": "out/scripts/jquery-pack.min.js"
+      },
+      "ace-pack": {
+        // "src": ['bower_components/ace-builds/src-min/**/*.js'],
+        // minimal dependencies... ace is big
+        "src": [
+          'bower_components/ace-builds/src-min/ace.js',
+          'bower_components/ace-builds/src-min/mode-ruby.js',
+          'bower_components/ace-builds/src-min/theme-github.js'
+        ],
+        "dest": "out/scripts/ace-pack.min.js"
       }
     }
   });
