@@ -12,12 +12,12 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
-			url: "http://website.com"
+			url: "http://2797cc477c8604836dc1-12ef6eb537544198f9481aca03e67cf7.r7.cf2.rackcdn.com"
 
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
-				'www.website.com',
-				'website.herokuapp.com'
+				# 'www.website.com',
+				# 'website.herokuapp.com'
 			]
 
 			# The default title of our website
