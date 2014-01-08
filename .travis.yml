@@ -13,7 +13,5 @@ deploy:
   skip_cleanup: true
   on:
     repo: maxlinc/pacto-site
-    branch: docpad
-branches:
-  only:
-  - docpad
+    branch: master
+
