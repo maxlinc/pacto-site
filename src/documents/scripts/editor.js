@@ -43,18 +43,30 @@ $(document).ready(function() {
     this.typeCode = function(text, finalPause) {
       var deferred = new $.Deferred();
       var textArr = text.split('');
+
+      var interval = 1000/25; // 25 fps
+      var now;
+      var then = Date.now();
+      var delta;
+
       animLoop(function (deltaT, now) {
-        var nextChar = textArr.shift();
+        now = Date.now();
+        delta = now - then;
+
+        if (delta > interval) { // limit fps
+          var nextChar = textArr.shift();
+
           if (typeof nextChar === "undefined") {
-            // return false; will stop the loop
             setTimeout(function() {
               deferred.resolve();
             }, finalPause);
+            // return false; will stop the loop
             return false;
           } else {
-            // rendering code goes here
             editor.insert(nextChar);
+            then = now - (delta % interval);
           }
+        }
       });
       return deferred;
     }
