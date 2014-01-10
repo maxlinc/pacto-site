@@ -1,3 +1,36 @@
+// See https://gist.github.com/louisremi/1114293#file_anim_loop_x.js
+// Cross browser, backward compatible solution
+(function( window, Date ) {
+// feature testing
+var raf = window.mozRequestAnimationFrame    ||
+          window.webkitRequestAnimationFrame ||
+          window.msRequestAnimationFrame     ||
+          window.oRequestAnimationFrame;
+
+window.animLoop = function( render, element ) {
+  var running, lastFrame = +new Date;
+  function loop( now ) {
+    if ( running !== false ) {
+      raf ?
+        raf( loop, element ) :
+        // fallback to setTimeout
+        setTimeout( loop, 16 );
+      // Make sure to use a valid time, since:
+      // - Chrome 10 doesn't return it at all
+      // - setTimeout returns the actual timeout
+      now = now && now > 1E4 ? now : +new Date;
+      var deltaT = now - lastFrame;
+      // do not render frame when deltaT is too high
+      if ( deltaT < 160 ) {
+        running = render( deltaT, now );
+      }
+      lastFrame = now;
+    }
+  }
+  loop();
+};
+})( window, Date );
+
 $(document).ready(function() {
   (function Editor() {
 
@@ -9,18 +42,22 @@ $(document).ready(function() {
 
     this.typeCode = function(text, finalPause) {
       var deferred = new $.Deferred();
-      var i = 0;
-      var timer = setInterval(function () {
-        this.editor.insert(text[i++]);
-        if (i > text.length) {
-          clearInterval(timer);
-          setTimeout(function() {
-            deferred.resolve();
-          }, finalPause);
-        }
-      }, 50);
+      var textArr = text.split('');
+      animLoop(function (deltaT, now) {
+        var nextChar = textArr.shift();
+          if (typeof nextChar === "undefined") {
+            // return false; will stop the loop
+            setTimeout(function() {
+              deferred.resolve();
+            }, finalPause);
+            return false;
+          } else {
+            // rendering code goes here
+            editor.insert(nextChar);
+          }
+      });
       return deferred;
-    };
+    }
 
     var demoEditor = this;
     typing = demoEditor.typeCode("# Welcome to Pacto\n# We're going to show you some basic usage here", 1000).promise();
