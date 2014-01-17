@@ -11,7 +11,7 @@ navtitle: FAQ
 <ul>
 	<% for document in @getCollection('faqs').toJSON(): %>
 		<li>
-			<a href="<%= document.url %>"><%= document.title %></a>
+			<a href="<%= @getUrl(document.url) %>"><%= document.title %></a>
 		</li>
 	<% end %>
 </ul>

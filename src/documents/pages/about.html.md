@@ -3,7 +3,7 @@ title: What's it all about?
 
 layout: page
 pageOrder: 1
-includenInNavs: ['main']
+// includenInNavs: ['main']
 navtitle: About
 ```
 

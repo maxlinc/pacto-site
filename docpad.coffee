@@ -17,7 +17,7 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
-			url: "http://2797cc477c8604836dc1-12ef6eb537544198f9481aca03e67cf7.r7.cf2.rackcdn.com"
+			url: "/pacto"
 
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
@@ -31,23 +31,24 @@ docpadConfig = {
 
 			# The website description (for SEO)
 			description: """
-				When your website appears in search results in say Google, the text here will be shown underneath your website's title.
+				Easier Contract Testing
 				"""
 
 			# The website keywords (for SEO) separated by commas
 			keywords: """
-				place, your, website, keywoards, here, keep, them, related, to, the, content, of, your, website
+				contract, consumder-driven, testing
 				"""
 
 			# The website author's name
-			author: "Your Name"
+			author: "ThoughtWorks"
 
 			# The website author's email
-			email: "your@email.com"
+			email: "pacto-gem@googlegroups.com"
 
 			# Styles
 			styles: [
-				"/styles/zurb-foundation.css"
+				"/styles/docco.css"
+				"/styles/zurb-foundation.css",
 				"/styles/style.css",
 				"/styles/highlightjs-github.css",
 				"/styles/editor.css",

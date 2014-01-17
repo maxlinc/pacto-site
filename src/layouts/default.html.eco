@@ -22,11 +22,11 @@
   <meta name="viewport" content="width=device-width" />
 
   <!-- Icons -->
-    <link rel="shortcut icon" href="icons/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icons/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icons/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="<%= @getUrl('icons/favicon.ico') %>">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<%= @getUrl('icons/apple-touch-icon-144-precomposed.png') %>">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<%= @getUrl('icons/apple-touch-icon-114-precomposed.png') %>">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<%= @getUrl('icons/apple-touch-icon-72-precomposed.png') %>">
+    <link rel="apple-touch-icon-precomposed" href="<%= @getUrl('icons/apple-touch-icon-57-precomposed.png') %>">
 
   <!-- Shims: IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -35,7 +35,7 @@
   
   <!-- Styles -->
   <link href='http://fonts.googleapis.com/css?family=Montserrat|Maven+Pro' rel='stylesheet' type='text/css'>
-  <%- @getBlock('styles').add(@site.styles).toHTML() %>
+  <%- @getBlock('styles').add(@getUrl(@site.styles)).toHTML() %>
 
 </head>
 <body >
@@ -43,7 +43,7 @@
       <nav class="container top-bar">
           <ul class=" title-area">
             <li class="name">
-              <h1><a href="/"> <%= @site.title %></a></h1>
+              <h1><a href="<%= @getUrl('/') %>"> <%= @site.title %></a></h1>
             </li>
             <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
           </ul>  
@@ -59,8 +59,8 @@
             <ul class="right">
               <% for document in @getCollection('documentsInMainNav').toJSON(): %>
               <li class="divider hide-for-small"></li>
-          <li typeof="sioc:Page" about="<%= document.url %>" class="<%= 'active'  if @document.url is document.url %>">
-            <a href="<%= document.url %>" property="dc:title"><%= document.navtitle %></a>
+          <li typeof="sioc:Page" about="<%= @getUrl(document.url) %>" class="<%= 'active'  if @document.url is document.url %>">
+            <a href="<%= @getUrl(document.url) %>" property="dc:title"><%= document.navtitle %></a>
           </li>
         <% end %>
             </ul>
@@ -81,7 +81,7 @@
                 <% for document in @getCollection('pages').toJSON(): %>
                 <li class="divider hide-for-small"></li>
             <li typeof="sioc:Page" about="<%= document.url %>" class="<%= 'active'  if @document.url is document.url %>">
-              <a href="<%= document.url %>" property="dc:title"><%= document.navtitle %></a>
+              <a href="<%= @getUrl(document.url) %>" property="dc:title"><%= document.navtitle %></a>
             </li>
           <% end %>
             </ul>
@@ -99,14 +99,14 @@
     condition jquery or zepto adapted from: 
     http://foundation.zurb.com/docs/javascript.html
   -->
-  <script src="/scripts/jquery-pack.min.js"></script>
-  <script src="/scripts/ace-pack.min.js"></script>
+  <script src="<%= @getUrl('/scripts/jquery-pack.min.js')%>"></script>
+  <script src="<%= @getUrl('/scripts/ace-pack.min.js')%>"></script>
   <script>
     //init all foundation plugins. 
     //Currently this only includes foundation.topbar.js
     //See http://foundation.zurb.com/docs/javascript.html
     $(document).foundation();
   </script>
-  <%- @getBlock('scripts').add(@site.scripts).toHTML() %>
+  <%- @getBlock('scripts').add(@getUrl(@site.scripts)).toHTML() %>
 </body>
 </html>

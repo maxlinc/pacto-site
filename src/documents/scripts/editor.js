@@ -81,17 +81,18 @@ $(document).ready(function() {
     var animationFrames = [
       function() { return demoEditor.typeCode("# Welcome to Pacto\n# We're going to show you some basic usage here", 1000) },
       clearEditor,
-      function() { return demoEditor.typeCode("# First, add Pacto to your Gemfile\n\ngem 'pacto'\n", 1000) },
-      function() {
-        var deferred = new $.Deferred();
-        panel = $("<div class=\"bubble\"></div>");
-        panel.height($("#editor-section").height());
-        panel.append("<h4>And then...</h4>");
-        panel.append("<p>bundle install</p>");
-        $("#comments-container").append(panel).addClass('animated slideInRight');
-        deferred.resolve();
-        return deferred;
-      }
+      function() { return demoEditor.typeCode("# First, add Pacto to your Gemfile\n\ngem 'pacto'\n", 1000) }
+      // ,
+      // function() {
+      //   var deferred = new $.Deferred();
+      //   panel = $("<div class=\"bubble\"></div>");
+      //   panel.height($("#editor-section").height());
+      //   panel.append("<h4>And then...</h4>");
+      //   panel.append("<p>bundle install</p>");
+      //   $("#comments-container").append(panel).addClass('animated slideInRight');
+      //   deferred.resolve();
+      //   return deferred;
+      // }
     ];
 
     function runAnimation() {
