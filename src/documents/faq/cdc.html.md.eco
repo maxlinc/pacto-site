@@ -1,0 +1,18 @@
+```
+layout: faqpost
+title: What are Consumer-Driven Contracts?
+faqOrder: 0
+```
+Consumer-Driven Contracts are pattern for evolving services.  In Consumer-Driven Contracts, each consumer captures their expectations of the provider in a separate contract.  All of these contracts are shared with the provider so they gain insight into the obligations they must fulfill for each individual client.  The provider can create a test suite to validate these obligations.  This lets them stay agile and make changes that do not affect any consumer, and pinpoint consumers that will be affected by a required change for deeper planning and discussion.
+
+![Consumer-Driven Contracts](<%= @getUrl('/images/cdc.png') %> 'Consumer-Driven Contracts')
+
+Pacto helps guarantee these obligations are met, and decouple the obligations from the implementation so the consumers and providers can be tested independently.
+
+![Consumer-Driven Contracts](<%= @getUrl('/images/cdc-stub.png') %> 'Consumer-Driven Contracts')
+
+Providers can also decouple from consumers for their testing.  Pacto can use the contracts to simulate consumers for provider testing:
+
+![Consumer-Driven Contracts](<%= @getUrl('/images/cdc-simulate.png') %> 'Consumer-Driven Contracts')
+
+Read more at [Consumer-Driven Contracts: A Service Evolution Pattern](http://martinfowler.com/articles/consumerDrivenContracts.html).

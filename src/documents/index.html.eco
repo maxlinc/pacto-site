@@ -30,7 +30,7 @@ layout: 'default'
 	<section class="small-12 large-6 columns">
 		<h2>Consumers</h2>
 		<p>Pacto helps you test consumers by both validating and stubbing services.  This helps you decouple tests to reduce test times and non-deterministic test failures without losing confidence in your test suite.  You can also design compatibility tests for similar consumers.</p>
-		<p><a  href="#">Learn about Consumers</a></p>
+		<p><a  href="<%= @getUrl('/pages/consumers') %>">Learn about Consumers</a></p>
 	</section>
 	<section class="small-12 large-6 columns">
 		<h2>Providers</h2>

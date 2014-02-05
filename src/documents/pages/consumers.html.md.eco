@@ -1,0 +1,61 @@
+```
+title: Consumers
+
+layout: page
+pageOrder: 1
+navtitle: Consumers
+```
+
+A consumer uses a service from a provider.  Since Pacto deals with REST/HTTP, this means the consumer sends HTTP requests and the provider responds.  Pacto helps place constraints between the consumers and providers of a service.  This page outlines Pacto usage patterns from a consumers point-of-view.  The [providers] page outlines the same patterns from the other viewpiont.
+
+#### Overview of constraints
+
+<blockquote>
+  <p><strong>Collaboration tests</strong> prove that the client interacts with its collaborators correctly; the client sends the correct messages and message arguments to the collaborator and appropriately handles all outputs from the collaborator.&hellip;</p>
+  <p><strong>Contract testing</strong>, on the other hand, deals with testing that an interface implementation accurately respects the interface it is implementing. Does the implementor support the contract it declares to support?</p>
+  <cite>Chris Bartlin - [Understanding the power of isolated object testing](http://bartling.blogspot.com/2012/01/understanding-power-of-isolated-object.html)</cite>
+</blockquote>
+
+You can use [Pacto Contracts](<%= @getUrl('/pages/contract') %>) to place constraints on interface between a consumer/producer and Pacto's [Rspec expectations](<%= @getUrl('/pages/expectations') %>) to create expectations about the actual messages expected between a consumer/provider for a given test scenario.
+
+#### Consumer Usage Patterns
+
+##### Single Consumer
+
+If you are primarily concerned about the testing of a single consumer of a service, then your primary concern is fast and [deterministic](http://martinfowler.com/articles/nonDeterminism.html#RemoteServices) test feedback.
+
+The recommended pattern here is to use Pacto for [integration contract testing](http://martinfowler.com/bliki/IntegrationContractTest.html).  In integration contract testing, you compare real remote services with test doubles that simulate them.  Pacto acts as a simple way to perform this comparison, by validating both against a contract, which includes expectations about HTTP headers and [json-schemas](http://json-schema.org/) validate request and response bodies.
+
+You can setup a test suite so that Pacto validates responses whether they come from the live provider or are stubbed by a test double:
+
+![Consumers](<%= @getUrl('/images/pair.png') %> 'Consumer/Provider Pair')
+
+Pacto contracts will give you a clear, versionable history of your expectation of the service.  Pacto will make it clear if a test broke because of an unexpected change to the service structure (e.g. the service provider unexpectedly renamed a field or changed a data type) as opposed to tests that break because of changes to test data (e.g. getting a 404 when searching for a resource that used to exist).  The history of these changes can provided added clarity over the history provided by record-and-replay or [self-initializing fakes](http://martinfowler.com/bliki/SelfInitializingFake.html), because the Pacto contracts only document the structure of the service, not the data captured from multiple interactions with a service.  See the blog post [Pacto and VCR](<%= @getUrl('/blog/pacto_and_vcr') %>) for details.
+
+There are [many different ways](http://robots.thoughtbot.com/how-to-stub-external-services-in-tests) to stub external services, and Pacto can validate most of them.  Pacto will integrate with any WebMock-based stubbing system, and you can even use our [polyglot testing](<%= @getUrl('/pages/polyglot') %>) techniques to test non-Ruby applications or non-Ruby stubbing systems that use real servers, like [mountebank](http://www.mbtest.org/).
+
+Pacto does have it's own stubbing system that generates stubbed responses based on the Contract.  This may be a good choice if you have a simple service and want to have maximum decoupling and contract validation, but it isn't powerful enough for tests that require stateful test doubles or complex data structures.
+
+##### One of several dissimilar consumers
+
+If the consumer you are testing is one of a few dissimilar consumers, then the service evolution pattern becomes important.  You want the provider to keep all its obligations to your service, and react quickly to requested changes.  However, you don't want to spend all your time in meetings and coordinating changes with other consumers.
+
+![Consumer-Driven Contracts](<%= @getUrl('/images/cdc.png') %> 'Consumer-Driven Contracts')
+
+There is a service evolution pattern called [Consumer-Driven Contracts](http://martinfowler.com/articles/consumerDrivenContracts.html) that is a good option for this scenario.  It lets each consumer decide what they need from the provider.  The provider agrees to keep each consumer happy, but avoids making any unnecessary guarantees about the service.  This lets the provider remain agile.
+
+##### One of many similar consumers
+
+Does one of these situations describe your consumer?
+- You are rewriting a legacy application or microservice with different technology, but should provide a similar integration with external services.
+- Your organization is implementing a web, iOS, and Android application with similar features.  You are writing one of those applications.
+- You are writing one of several language-bindings for an API to [make your developer portal more intuitive](http://blog.programmableweb.com/2014/01/15/six-ways-to-make-your-developer-portal-more-intuitive/).
+
+If so, then the [polyglot testing](<%= @getUrl('/pages/polyglot') %>) and/or (the [Documentation-Driven Contracts](<%= @getUrl('/pages/documentation-driven') %>) patterns may be a good fit.
+
+![Polyglot Testing](<%= @getUrl('/images/polyglot.png') %> 'Polyglot Testing')
+
+The Polyglot Testing approaches let you use Pacto to test non-Ruby consumers.  It's especially useful for running similar test scenarios in each consumer and ensuring they trigger a similar interaction with the provider.
+
+The Documentation-Driven Contracts approach aims to ensure the documentation, test doubles, and live service are all consistent.  You generate contracts from documentation and then using those contracts to validate both test doubles and the live service.  Guaranteeing that the documentation and test doubles are accurate helps create additional consumers without having to rely on trial-and-error integration with the live service.
+

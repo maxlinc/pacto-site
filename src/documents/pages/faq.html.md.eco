@@ -1,6 +1,6 @@
 ```
-title: Got a question?
-subtitle: We've got some answers.
+title: Confused?
+subtitle: Hopefully this answers will help...
 layout: page
 
 pageOrder: 2
@@ -15,3 +15,5 @@ navtitle: FAQ
 		</li>
 	<% end %>
 </ul>
+
+[Contact us](<%= @getUrl('/pages/contact') %>) if your question isn't answered above.
