@@ -6,6 +6,10 @@ docpadConfig = {
       plugins:
           livereload:
             enabled: false
+    development:
+    	templateData:
+    		site:
+    			url: "http://localhost:9778"
 
 	# =================================
 	# Template Data
