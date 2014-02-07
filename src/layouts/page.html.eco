@@ -3,24 +3,26 @@ layout: default
 ---
 
 <article id="page" class="page">
-	<header>
-		<div class="row">
-			<div class="columns">
-				<h1><%= @document.title %></h1>
-				<% if  @document.subtitle: %>
-					<h3><%= @document.subtitle %></h3>
-				<% end %>
-			</div>
-		</div>
-	</header>
-	<div class="row">
+  <header>
+    <div class="row">
+      <div class="columns">
+        <h1><%= @document.title %></h1>
+        <% if  @document.subtitle: %>
+          <h3><%= @document.subtitle %></h3>
+        <% end %>
+      </div>
+    </div>
+  </header>
+  <div class="row">
+    <nav class="columns large-3">
+      <%- @partial('menu.html.eco', {menuItems: @generateMenu(@document.url)}) %>
+    </nav>
+    <div class="columns large-9 small-12 page-content">
+      <%- @content %>
+    </div>
+  </div>
 
-		<div class="columns large-12 small-12 page-content">
-			<%- @content %>
-		</div>
-	</div>
-
-	
+  
 
 </article>
 

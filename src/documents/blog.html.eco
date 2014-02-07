@@ -5,6 +5,7 @@ layout: page
 pageOrder: 3
 includenInNavs: ['main']
 navtitle: Blog
+menuOrder: 4
 ---
 
 <nav class="linklist">

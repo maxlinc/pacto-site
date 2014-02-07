@@ -5,6 +5,7 @@ layout: page
 pageOrder: 1
 // includenInNavs: ['main']
 navtitle: Community
+menuOrder: 5
 ```
 
 Here's how you can get in touch with the Pacto community:

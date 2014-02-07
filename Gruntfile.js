@@ -10,7 +10,8 @@ module.exports = function(grunt) {
           "src/documents/scripts/modernizr.js",
           "node_modules/foundation/js/vendor/jquery.js",
           "node_modules/foundation/js/foundation/foundation.js",
-          "node_modules/foundation/js/foundation/foundation.topbar.js"
+          "node_modules/foundation/js/foundation/foundation.topbar.js",
+          "bower_components/iframe-auto-height-jquery-plugin/Src/iframeheight.min.js"
         ],
         "dest": "out/scripts/jquery-pack.min.js"
       },

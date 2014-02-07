@@ -1,0 +1,19 @@
+<!-- Define `renderMenu` partial -->
+<% renderMenu = (items) => %>
+<ul class="side-nav">
+    <% for item in items: %>
+        <li <% if item.state: %> class="active"<% end %>>
+            <% if item.state != 'current': %>
+                <a href="<%= item.url %>"><%= item.title %></a>
+            <% else: %>
+                <strong><%= item.title %></strong>
+            <% end %>
+            <% if item.children: %>
+                <%- renderMenu(item.children) %>
+            <% end %>
+        </li>
+    <% end %>
+</ul>   
+<% end %>
+<!-- Run `renderMenu` partial against passed `menuItems` meta-data  -->
+<%= renderMenu @menuItems %>

@@ -42,7 +42,8 @@
     "docpad-plugin-nodesass": "~2.1.1",
     "docpad-plugin-grunt": "~2.1.1",
     "grunt-cli": "~0.1.11",
-    "docpad-plugin-geturl": "~2.1.1"
+    "docpad-plugin-geturl": "~2.1.1",
+    "docpad-plugin-menu": "git://github.com/maxlinc/docpad-plugin-menu.git#skipUnordered"
   },
   "devDependencies": {
     "docpad-plugin-livereload": "~2.5.6",
