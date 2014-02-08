@@ -2,6 +2,7 @@
 <% renderMenu = (items) => %>
 <ul class="side-nav">
     <% for item in items: %>
+        <% continue unless item.meta.order? %>
         <li <% if item.state: %> class="active"<% end %>>
             <% if item.state != 'current': %>
                 <a href="<%= item.url %>"><%= item.title %></a>
