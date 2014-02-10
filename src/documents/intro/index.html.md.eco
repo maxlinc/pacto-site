@@ -1,0 +1,23 @@
+---
+title: Intro
+menuOrder: 1
+layout: page
+---
+
+Pacto judges the contracts between consumers and providers of RESTful services.  It can aid in designing realistic test doubles, by ensuring the double complies with the same contract as the real service.  It can also aid with service evolution patterns, like [Consumer-Driven Contracts](<%= @getUrl('/patterns/cdc/') %>) or [Documentation-Driven Contracts](<% @getUrl('/patterns/ddc') %>).
+
+Pacto ensures consumers meet their contractual obligations:
+- Send the required HTTP request headers
+- Send an appropriate request body (when required)
+
+Pacto also ensures providers meet their contractual obligations:
+- Send an appropriate response code
+- Send the required HTTP response headers
+- Send an appropriate response body
+
+Pacto can also ensure the provider and consumer collaborate appropriately.  It can ensure that for a given scenario:
+- The consumer calls the expected service(s) with a valid request
+- The provider sends a valid response
+- No unexpected services were called
+
+Since Pacto describes the agreement between a consumer and a provider, rather than capturing the actual data, it provides clear messages when an obligation is not met:
