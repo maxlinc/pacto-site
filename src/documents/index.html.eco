@@ -4,9 +4,11 @@ layout: 'default'
 
 <!-- Main hero unit for a primary marketing message or call to action -->
 <header class="tall">
-  <ul class="small-block-grid-3">
   <div class="row">
-    <section id="editor-section" class="small-12 large-6 columns large-centered">
+    <section class="small-12 large-6 columns large-centered show-for-touch">
+      <img src="<%= @getUrl('/images/pacto-animation.gif') %>"></img>
+    </section>
+    <section id="editor-section" class="small-12 large-6 columns large-centered hide-for-touch">
       <div id="editor-mask" class="row">
         <div id="editor-container">
             <div id="editor">
@@ -30,11 +32,11 @@ layout: 'default'
 	<section class="small-12 large-6 columns">
 		<h2>Consumers</h2>
 		<p>Pacto helps you test consumers by both validating and stubbing services.  This helps you decouple tests to reduce test times and non-deterministic test failures without losing confidence in your test suite.  You can also design compatibility tests for similar consumers.</p>
-		<p><a  href="<%= @getUrl('/pages/consumers') %>">Learn about Consumers</a></p>
+		<p><a  href="<%= @getUrl('/intro/consumers') %>">Learn about Consumers</a></p>
 	</section>
 	<section class="small-12 large-6 columns">
 		<h2>Providers</h2>
 		<p>You can use Consumer-Driven Contracts to ensure you're providers are well tested without losing agility.  Pacto will test the provider implementation and make sure it complies with the same contract used to stub the service for consumers.</p>
-		<p><a  href="#">Learn about Providers</a></p>
+		<p><a  href="<%= @getUrl('/intro/providers') %>">Learn about Providers</a></p>
 	</section>
 </div>
