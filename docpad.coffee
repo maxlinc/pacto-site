@@ -18,7 +18,6 @@ docpadConfig = {
   # To access one of these within our templates, refer to the FAQ: https://github.com/bevry/docpad/wiki/FAQ
 
   templateData:
-
     # Specify some site properties
     site:
       # The production url of our website
@@ -91,6 +90,17 @@ docpadConfig = {
       # Merge the document keywords with the site keywords
       @site.keywords.concat(@document.keywords or []).join(', ')
 
+    previousMenuItem: ->
+      for item in @getCollection('filteredMenuItems').toJSON()
+        foundItem = lastItem if item.title == @document.title
+        lastItem = item
+      foundItem
+
+    nextMenuItem: ->
+      exit = false
+      for item in @getCollection('filteredMenuItems').toJSON()
+        return item if exit
+        exit = true if item.title == @document.title
 
   # =================================
   # Collections
@@ -114,6 +124,8 @@ docpadConfig = {
     faqs: (database) ->
       database.findAllLive({relativeOutDirPath: 'faq'}, [faqOrder:1,title:1])
 
+    filteredMenuItems: (database) ->
+      database.findAllLive({menuOrder: {$gt: 0}}).setComparator(menuOrder:1)
 
   # =================================
   # Plugins
