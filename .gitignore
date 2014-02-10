@@ -4,3 +4,4 @@ out/
 src/files/vendor/twitter-bootstrap
 .docpad.db
 bower_components/
+.grunt/

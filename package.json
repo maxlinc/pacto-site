@@ -61,7 +61,8 @@
     "bower": "~1.2.8",
     "node-bourbon": "~1.0.0",
     "highlight.js": "~8.0.0",
-    "docpad-plugin-geturl": "~2.1.1"
+    "docpad-plugin-geturl": "~2.1.1",
+    "grunt-gh-pages": "~0.9.0"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {

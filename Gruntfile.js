@@ -25,11 +25,22 @@ module.exports = function(grunt) {
         ],
         "dest": "out/scripts/ace-pack.min.js"
       }
+    },
+    'gh-pages': {
+      options: {
+        base: 'out',
+        repo: 'https://github.com/thoughtworks/pacto',
+        branch: 'gh-pages'
+      },
+      src: '**/*'
     }
   });
 
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
+
+  // Task for deploying to github pages"
+  grunt.loadNpmTasks('grunt-gh-pages');
 
   // Default task(s).
   grunt.registerTask('default', ['uglify']);
