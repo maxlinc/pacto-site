@@ -7,7 +7,7 @@ navtitle: Consumers
 menuOrder: 1.1
 ```
 
-A consumer uses a service from a provider.  Since Pacto deals with REST/HTTP, this means the consumer sends HTTP requests and the provider responds.  Pacto helps place constraints between the consumers and providers of a service.  This page outlines Pacto usage patterns from a consumers point-of-view.  The [providers] page outlines the same patterns from the other viewpoint.
+A consumer uses a service from a provider.  Since Pacto deals with REST/HTTP, this means the consumer sends HTTP requests and the provider responds.  Pacto helps place constraints between the consumers and providers of a service.  This page outlines Pacto usage patterns from a consumers point-of-view.  The [providers](providers) page outlines the same patterns from the other viewpoint.
 
 #### Overview of constraints
 
@@ -24,6 +24,8 @@ You can use [Pacto Contracts](<%= @getUrl('/pages/contract') %>) to place constr
 ##### Single Consumer
 
 If you are primarily concerned about the testing of a single consumer of a service, then your primary concern is fast and [deterministic](http://martinfowler.com/articles/nonDeterminism.html#RemoteServices) test feedback.
+
+**Recommendation**: Use the [Integration Contract Testing](http://martinfowler.com/bliki/IntegrationContractTest.html) pattern.
 
 The recommended pattern here is to use Pacto for [integration contract testing](http://martinfowler.com/bliki/IntegrationContractTest.html).  In integration contract testing, you compare real remote services with test doubles that simulate them.  Pacto acts as a simple way to perform this comparison, by validating both against a contract, which includes expectations about HTTP headers and [json-schemas](http://json-schema.org/) validate request and response bodies.
 
@@ -43,6 +45,8 @@ If the consumer you are testing is one of a few dissimilar consumers, then the s
 
 ![Consumer-Driven Contracts](<%= @getUrl('/images/cdc.png') %> 'Consumer-Driven Contracts')
 
+**Recommendation**: Use the [Consumer-Driven Contracts](http://martinfowler.com/articles/consumerDrivenContracts.html) pattern (on a small scale).
+
 There is a service evolution pattern called [Consumer-Driven Contracts](http://martinfowler.com/articles/consumerDrivenContracts.html) that is a good option for this scenario.  It lets each consumer decide what they need from the provider.  The provider agrees to keep each consumer happy, but avoids making any unnecessary guarantees about the service.  This lets the provider remain agile.
 
 ##### One of many similar consumers
@@ -52,7 +56,7 @@ Does one of these situations describe your consumer?
 - Your organization is implementing a web, iOS, and Android application with similar features.  You are writing one of those applications.
 - You are writing one of several language-bindings for an API to [make your developer portal more intuitive](http://blog.programmableweb.com/2014/01/15/six-ways-to-make-your-developer-portal-more-intuitive/).
 
-If so, then the [polyglot testing](<%= @getUrl('/pages/polyglot') %>) and/or (the [Documentation-Driven Contracts](<%= @getUrl('/pages/documentation-driven') %>) patterns may be a good fit.
+**Recommendation**: Use the [Documentation-Driven Contracts](<%= @getUrl('/pages/documentation-driven') %>) and/or [Polyglot Testing](<%= @getUrl('/pages/polyglot') %>) patterns.
 
 ![Polyglot Testing](<%= @getUrl('/images/polyglot.png') %> 'Polyglot Testing')
 

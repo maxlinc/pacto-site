@@ -1,9 +1,9 @@
 ```
-layout: faqpost
+layout: page
 title: Consumer-Driven Contracts
 menuOrder: 2.2
 ```
-Consumer-Driven Contracts are pattern for evolving services.  In Consumer-Driven Contracts, each consumer captures their expectations of the provider in a separate contract.  All of these contracts are shared with the provider so they gain insight into the obligations they must fulfill for each individual client.  The provider can create a test suite to validate these obligations.  This lets them stay agile and make changes that do not affect any consumer, and pinpoint consumers that will be affected by a required change for deeper planning and discussion.
+Consumer-Driven Contracts are a pattern for evolving services.  In Consumer-Driven Contracts, each consumer captures their expectations of the provider in a separate contract.  All of these contracts are shared with the provider so they gain insight into the obligations they must fulfill for each individual client.  The provider can create a test suite to validate these obligations.  This lets them stay agile and make changes that do not affect any consumer, and pinpoint consumers that will be affected by a required change for deeper planning and discussion.
 
 ![Consumer-Driven Contracts](<%= @getUrl('/images/cdc.png') %> 'Consumer-Driven Contracts')
 

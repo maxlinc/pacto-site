@@ -6,3 +6,27 @@ pageOrder: 2
 navtitle: Providers
 menuOrder: 1.2
 ```
+
+This page outlines Pacto usage patterns from a providers point-of-view.  The [consumers](consumers) page outlines the same patterns from the other viewpoint.
+
+#### Provider Usage Patterns
+
+##### Serving a single Consumer
+
+Pacto has some benefits even if you only have plans to provide a service to a single consumer, though a major benefit is having a headstart towards either multi-consumer service evolution pattern.
+
+On the provider side, you can use the tools that come with Pacto to simulate consumers along with [integration contract testing](http://martinfowler.com/bliki/IntegrationContractTest.html) to ensure it matches up with the agreements made with the consumer.  This consumer should be doing something similar - they are using integration contract testing to ensure they have realistically stubbed responses, while the provider ensures they ahve realistically simulated requests.
+
+**Recommendation**: Use the [Consumer-Driven Contracts](http://martinfowler.com/articles/consumerDrivenContracts.html) pattern (on a small scale).
+
+##### Serving several dissimilar Consumers
+
+If you are serving several dissimilar consumers then we recommend scaling up the approach used for a single consumer so you have a contract for each consumer.  This let's you simulate *each* consumer with slight variations in their requests and expectations of the response for rapid feedback.
+
+**Recommendation**: Use the [Consumer-Driven Contracts](http://martinfowler.com/articles/consumerDrivenContracts.html) pattern.
+
+##### Serving many similar Consumers
+
+If you expect to run a public API or somethign else where you cannot possibly handle each consumer individually, then the best thing to do is integrate Pacto with your documentation system, so you know the promises you make in your documentation are the same ones you validate in your testing.
+
+**Recommendation**: Use the [Documentation-Driven Contracts](<%= @getUrl('/pages/documentation-driven') %>) pattern.
