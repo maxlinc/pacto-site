@@ -20,7 +20,7 @@ layout: 'default'
   <div class="row">
     <section class="small-12 large-6 columns large-centered">
       <div id="comments-container">
-          <a href="<%= @getUrl('/docco/samples.html') %>" class="button radius secondary large">View the Cheat Sheet</a>
+          <a href="<%= @getUrl('/usage') %>" class="button radius secondary large">View Usage Samples</a>
       </div>
     </section>
   </div>

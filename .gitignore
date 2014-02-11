@@ -1,3 +1,6 @@
+samples/.rbenv-vars
+samples/Gemfile.lock
+src/files/doc
 bourbon/
 node_modules/
 out/

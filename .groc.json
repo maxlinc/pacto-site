@@ -1,0 +1,7 @@
+{
+  "glob": ["samples/**/README.md", "samples/**/*.rb", "samples/contracts/**.js"],
+  "strip": ["samples"],
+  "github": false,
+  "index": "samples/README.md",
+  "out": "src/files/doc"
+}

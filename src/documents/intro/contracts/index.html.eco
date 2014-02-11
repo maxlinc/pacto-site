@@ -4,4 +4,4 @@ layout: default
 menuOrder: 1.3
 ```
 
-<iframe class="docco" src="<%= @getUrl('/docco/contract.html') %>" width="100%" scrolling="no"></iframe>
+<%= @partial('groc', grocFile: @getUrl('/doc/contracts/contract.html')) %>

@@ -1,0 +1,7 @@
+```
+title: Samples
+layout: default
+menuOrder: 3
+```
+
+<%= @partial('groc', grocFile: @getUrl('/doc/index.html')) %>

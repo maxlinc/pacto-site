@@ -1,0 +1,29 @@
+{
+  "request": {
+    "headers": {
+    },
+    "method": "put",
+    "path": "/notifications",
+    "body": {
+      "$schema": "http://json-schema.org/draft-03/schema#",
+      "description": "Generated from https://api.github.com/notifications with shasum 02c82bccf147d5283ddf54fc78bade8fef1be093",
+      "type": "object",
+      "required": true,
+      "properties": {
+        "last_read_at": {
+          "type": "string",
+          "required": true
+        }
+      }
+    }
+  },
+  "response": {
+    "headers": {
+      "Status": "205 Reset Content",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Expose-Headers": "ETag, Link, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval",
+      "Access-Control-Allow-Origin": "*"
+    },
+    "status": 205
+  }
+}
