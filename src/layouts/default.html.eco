@@ -34,7 +34,6 @@
   <![endif]-->
   
   <!-- Styles -->
-  <link href='http://fonts.googleapis.com/css?family=Montserrat|Maven+Pro' rel='stylesheet' type='text/css'>
   <%- @getBlock('styles').add(@getUrl(@site.styles)).toHTML() %>
 
 </head>
@@ -53,7 +52,7 @@
                 <a href="https://github.com/thoughtworks/pacto">GitHub</a>
               </li>
               <li>
-                <a href="https://www.relishapp.com/maxlinc/pacto/docs">Documentation</a>
+                <a href="<%= @getUrl('/intro/') %>">Documentation</a>
               </li>
             </ul>
             <ul class="right">
