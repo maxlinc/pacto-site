@@ -17,7 +17,7 @@ A consumer uses a service from a provider.  Since Pacto deals with REST/HTTP, th
   <cite>Chris Bartlin - [Understanding the power of isolated object testing](http://bartling.blogspot.com/2012/01/understanding-power-of-isolated-object.html)</cite>
 </blockquote>
 
-You can use [Pacto Contracts](<%= @getUrl('/pages/contract') %>) to place constraints on interface between a consumer/producer and Pacto's [Rspec expectations](<%= @getUrl('/pages/expectations') %>) to create expectations about the actual messages expected between a consumer/provider for a given test scenario.
+You can use [Pacto Contracts](/pages/contract) to place constraints on interface between a consumer/producer and Pacto's [Rspec expectations](/pages/expectations) to create expectations about the actual messages expected between a consumer/provider for a given test scenario.
 
 #### Consumer Usage Patterns
 
@@ -31,11 +31,11 @@ The recommended pattern here is to use Pacto for [integration contract testing](
 
 You can setup a test suite so that Pacto validates responses whether they come from the live provider or are stubbed by a test double:
 
-![Consumers](<%= @getUrl('/images/pair.png') %> 'Consumer/Provider Pair')
+![Consumers](/images/pair.png 'Consumer/Provider Pair')
 
-Pacto contracts will give you a clear, versionable history of your expectation of the service.  Pacto will make it clear if a test broke because of an unexpected change to the service structure (e.g. the service provider unexpectedly renamed a field or changed a data type) as opposed to tests that break because of changes to test data (e.g. getting a 404 when searching for a resource that used to exist).  The history of these changes can provided added clarity over the history provided by record-and-replay or [self-initializing fakes](http://martinfowler.com/bliki/SelfInitializingFake.html), because the Pacto contracts only document the structure of the service, not the data captured from multiple interactions with a service.  See the blog post [Pacto and VCR](<%= @getUrl('/blog/pacto_and_vcr') %>) for details.
+Pacto contracts will give you a clear, versionable history of your expectation of the service.  Pacto will make it clear if a test broke because of an unexpected change to the service structure (e.g. the service provider unexpectedly renamed a field or changed a data type) as opposed to tests that break because of changes to test data (e.g. getting a 404 when searching for a resource that used to exist).  The history of these changes can provided added clarity over the history provided by record-and-replay or [self-initializing fakes](http://martinfowler.com/bliki/SelfInitializingFake.html), because the Pacto contracts only document the structure of the service, not the data captured from multiple interactions with a service.  See the blog post [Pacto and VCR](/blog/pacto_and_vcr) for details.
 
-There are [many different ways](http://robots.thoughtbot.com/how-to-stub-external-services-in-tests) to stub external services, and Pacto can validate most of them.  Pacto will integrate with any WebMock-based stubbing system, and you can even use our [polyglot testing](<%= @getUrl('/pages/polyglot') %>) techniques to test non-Ruby applications or non-Ruby stubbing systems that use real servers, like [mountebank](http://www.mbtest.org/).
+There are [many different ways](http://robots.thoughtbot.com/how-to-stub-external-services-in-tests) to stub external services, and Pacto can validate most of them.  Pacto will integrate with any WebMock-based stubbing system, and you can even use our [polyglot testing](/pages/polyglot) techniques to test non-Ruby applications or non-Ruby stubbing systems that use real servers, like [mountebank](http://www.mbtest.org/).
 
 Pacto does have it's own stubbing system that generates stubbed responses based on the Contract.  This may be a good choice if you have a simple service and want to have maximum decoupling and contract validation, but it isn't powerful enough for tests that require stateful test doubles or complex data structures.
 
@@ -43,7 +43,7 @@ Pacto does have it's own stubbing system that generates stubbed responses based 
 
 If the consumer you are testing is one of a few dissimilar consumers, then the service evolution pattern becomes important.  You want the provider to keep all its obligations to your service, and react quickly to requested changes.  However, you don't want to spend all your time in meetings and coordinating changes with other consumers.
 
-![Consumer-Driven Contracts](<%= @getUrl('/images/cdc.png') %> 'Consumer-Driven Contracts')
+![Consumer-Driven Contracts](/images/cdc.png 'Consumer-Driven Contracts')
 
 **Recommendation**: Use the [Consumer-Driven Contracts](http://martinfowler.com/articles/consumerDrivenContracts.html) pattern (on a small scale).
 
@@ -56,9 +56,9 @@ Does one of these situations describe your consumer?
 - Your organization is implementing a web, iOS, and Android application with similar features.  You are writing one of those applications.
 - You are writing one of several language-bindings for an API to [make your developer portal more intuitive](http://blog.programmableweb.com/2014/01/15/six-ways-to-make-your-developer-portal-more-intuitive/).
 
-**Recommendation**: Use the [Documentation-Driven Contracts](<%= @getUrl('/pages/documentation-driven') %>) and/or [Polyglot Testing](<%= @getUrl('/pages/polyglot') %>) patterns.
+**Recommendation**: Use the [Documentation-Driven Contracts](/pages/documentation-driven) and/or [Polyglot Testing](/pages/polyglot) patterns.
 
-![Polyglot Testing](<%= @getUrl('/images/polyglot.png') %> 'Polyglot Testing')
+![Polyglot Testing](/images/polyglot.png 'Polyglot Testing')
 
 The Polyglot Testing approaches let you use Pacto to test non-Ruby consumers.  It's especially useful for running similar test scenarios in each consumer and ensuring they trigger a similar interaction with the provider.
 

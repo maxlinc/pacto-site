@@ -29,4 +29,4 @@ If you are serving several dissimilar consumers then we recommend scaling up the
 
 If you expect to run a public API or somethign else where you cannot possibly handle each consumer individually, then the best thing to do is integrate Pacto with your documentation system, so you know the promises you make in your documentation are the same ones you validate in your testing.
 
-**Recommendation**: Use the [Documentation-Driven Contracts](<%= @getUrl('/pages/documentation-driven') %>) pattern.
+**Recommendation**: Use the [Documentation-Driven Contracts](/pages/documentation-driven) pattern.

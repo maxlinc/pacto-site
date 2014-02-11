@@ -23,7 +23,7 @@ layout: default
 			<% for document in @document.relatedDocuments: %>
 				<li><span><%= document.date.toDateString() %></span>
 				&raquo;
-				<a href="<%= @getUrl(document.url) %>"><%= document.title %></a></li>
+				<a href="<%= document.url %>"><%= document.title %></a></li>
 			<% end %>
 		</nav>
 	</section>

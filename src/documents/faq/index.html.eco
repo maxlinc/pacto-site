@@ -11,9 +11,9 @@ navtitle: FAQ
 <ul>
 	<% for document in @getCollection('faqs').toJSON(): %>
 		<li>
-			<a href="<%= @getUrl(document.url) %>"><%= document.title %></a>
+			<a href="<%= document.url %>"><%= document.title %></a>
 		</li>
 	<% end %>
 </ul>
 
-[Contact us](<%= @getUrl('/pages/contact') %>) if your question isn't answered above.
+<a href="/pages/contact">Contact us</a> if your question isn't answered above.

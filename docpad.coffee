@@ -10,7 +10,7 @@ docpadConfig = {
       templateData:
         site:
           # Note: if you want to preview on a phone, you'll need a real IP address!
-          url: "http://localhost:9778"
+          url: "/"
 
   # =================================
   # Template Data
