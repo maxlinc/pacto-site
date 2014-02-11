@@ -6,7 +6,7 @@ layout: page
 
 Pacto can be used to test more than just Ruby projects.  In fact, we've been experimenting with Pacto as a way to validate OpenStack SDKs written in many languages.  The setup looks like this:
 
-![Polyglot Testing](/images/polyglot.png 'Polyglot Testing Setup')
+![Polyglot Testing](<%= @getUrl('/images/polyglot.png') %> 'Polyglot Testing Setup')
 
 The test suite is used to ensure that similar code samples from each SDK trigger similar RESTful interactions with the provider's API.  The process is:
 1. The test suite (written in RSpec) launches a Pacto Server to intercept API interactions.
@@ -17,4 +17,4 @@ The test suite is used to ensure that similar code samples from each SDK trigger
 
 The test suite is designed so that necessary pieces within a test are multi-threaded and avoid deadlocks, and you can run multiple tests in parallel to minimize the time required to test.
 
-We haven't packaged this approach up as a reusable project yet, but our [test suite is open-source](https://github.com/rackerlabs/polytrix) so check it out and then [contact Max](/pages/contact) if you're interested in helping extract reusable patterns.
+We haven't packaged this approach up as a reusable project yet, but our [test suite is open-source](https://github.com/rackerlabs/polytrix) so check it out and then [contact Max](<%= @getUrl('/pages/contact') %>) if you're interested in helping extract reusable patterns.

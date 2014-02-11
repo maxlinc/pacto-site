@@ -4,4 +4,4 @@ layout: default
 menuOrder: 1.3
 ```
 
-<%= @partial('groc', grocFile: '/doc/contracts/contract.html') %>
+<%= @partial('groc', grocFile: @getUrl('/doc/contracts/contract.html')) %>
