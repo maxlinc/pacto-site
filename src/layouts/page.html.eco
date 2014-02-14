@@ -19,14 +19,7 @@ layout: default
     </nav>
     <div class="columns large-9 small-12 page-content">
       <%- @content %>
-      <div>
-        <% if @previousMenuItem(): %>
-          <span class="left"><a href="<%= @previousMenuItem().url %>">&#8592; <%= @previousMenuItem().title %></a></span>
-        <% end %>
-        <% if @nextMenuItem(): %>
-          <span class="right"><a href="<%= @nextMenuItem().url %>"><%= @nextMenuItem().title %> &#8594;</a></span>
-        <% end %>
-      </div>
+      <%- @partial('doc_nav.html.eco') %>
     </div>
   </div>
 </article>

@@ -1,1 +1,6 @@
-<iframe class="groc" src="<%= @grocFile %>" width="100%" scrolling="no"></iframe>
+<div>
+  <iframe class="groc" src="<%= @grocFile %>" width="100%" scrolling="no"></iframe>
+<div>
+<div>
+  <%- @partial('doc_nav.html.eco') %>
+</div>

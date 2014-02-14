@@ -10,6 +10,8 @@ Pacto ensures consumers meet their contractual obligations:
 - Send the required HTTP request headers
 - Send an appropriate request body (when required)
 
+![Consumer Validation](<%= @getUrl('/images/req_header_validation.gif') %> 'Consumer Validation')
+
 Pacto also ensures providers meet their contractual obligations:
 - Send an appropriate response code
 - Send the required HTTP response headers
@@ -19,5 +21,7 @@ Pacto can also ensure the provider and consumer collaborate appropriately.  It c
 - The consumer calls the expected service(s) with a valid request
 - The provider sends a valid response
 - No unexpected services were called
+
+![Collaboration Test](<%= @getUrl('/images/pacto-collaboration-anim.gif') %> 'Collaboration')
 
 Since Pacto describes the agreement between a consumer and a provider, rather than capturing the actual data, it provides clear messages when an obligation is not met:

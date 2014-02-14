@@ -19,6 +19,8 @@ A consumer uses a service from a provider.  Since Pacto deals with REST/HTTP, th
 
 You can use [Pacto Contracts](<%= @getUrl('/pages/contract') %>) to place constraints on interface between a consumer/producer and Pacto's [Rspec expectations](<%= @getUrl('/pages/expectations') %>) to create expectations about the actual messages expected between a consumer/provider for a given test scenario.
 
+![Request Validation](<%= @getUrl('/images/req_header_validation.gif') %> 'Consumer/Provider Pair')
+
 #### Consumer Usage Patterns
 
 ##### Single Consumer

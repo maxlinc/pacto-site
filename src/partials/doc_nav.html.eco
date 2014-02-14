@@ -1,0 +1,8 @@
+<div>
+  <% if @previousMenuItem(): %>
+    <span class="left"><a href="<%= @getUrl(@previousMenuItem().url) %>">&#8592; <%= @previousMenuItem().title %></a></span>
+  <% end %>
+  <% if @nextMenuItem(): %>
+    <span class="right"><a href="<%= @getUrl(@nextMenuItem().url) %>"><%= @nextMenuItem().title %> &#8594;</a></span>
+  <% end %>
+</div>
