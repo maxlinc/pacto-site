@@ -2,6 +2,6 @@
   "glob": ["samples/**/README.md", "samples/**/*.rb", "samples/contracts/**.js"],
   "strip": ["samples"],
   "github": false,
-  "index": "samples/README.md",
+  "index": "samples/samples.rb",
   "out": "src/files/doc"
 }
